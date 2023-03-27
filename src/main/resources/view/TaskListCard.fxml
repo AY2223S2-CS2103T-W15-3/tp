@@ -2,12 +2,14 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <HBox id="cardPane" fx:id="cardPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
@@ -26,22 +28,31 @@
             <Region fx:constant="USE_PREF_SIZE" />
           </minWidth>
         </Label>
-        <Label fx:id="taskDesc" prefHeight="26.0" prefWidth="485.0" style="-fx-font-size: 20px;" styleClass="cell_big_label" text="\$taskDesc">
+        <Label fx:id="taskDesc" prefHeight="30.0" prefWidth="417.0" style="-fx-font-size: 20px;" styleClass="cell_big_label" text="\$taskDesc">
                <font>
                   <Font size="16.0" />
                </font></Label>
             <Label prefHeight="19.0" prefWidth="85.0" style="-fx-font-size: 15px;" text="Assigned to: " />
-         <Label fx:id="personAssigned" style="-fx-font-size: 20px;" styleClass="cell_small_label" text="\$personAssigned" />
+         <Label fx:id="personAssigned" prefHeight="30.0" prefWidth="252.0" style="-fx-font-size: 20px;" styleClass="cell_small_label" text="\$personAssigned" />
             <VBox.margin>
                <Insets bottom="10.0" />
             </VBox.margin>
       </HBox>
-         <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" spacing="5">
+         <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="30.0" prefWidth="740.0" spacing="5">
             <children>
                <Label style="-fx-font-size: 15px;" text="        Due By: " />
-            <Label fx:id="taskDeadline" style="-fx-font-size: 15px;" styleClass="cell_small_label" text="\$taskDeadline" />
-               <Region maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="459.0" />
+            <Label fx:id="taskDeadline" prefHeight="22.0" prefWidth="108.0" style="-fx-font-size: 15px;" styleClass="cell_small_label" text="\$taskDeadline" />
+               <Circle fx:id="circle1" fill="WHITE" radius="12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.1" />
+               <Circle fx:id="circle2" fill="WHITE" radius="12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.1" />
+               <Circle fx:id="circle3" fill="WHITE" radius="12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.1" />
+               <Circle fx:id="circle4" fill="WHITE" radius="12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.1" />
+               <Circle fx:id="circle5" fill="WHITE" radius="12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.1" />
+               <Region maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="203.0">
+                  <effect>
+                     <Shadow />
+                  </effect></Region>
             <Label fx:id="personRole" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #A98B3E; -fx-background-radius: 10px; -fx-alignment: center; -fx-label-padding: 5px;" styleClass="cell_small_label" text="\$personRole" />
+               <Label fx:id="isDone" prefHeight="18.0" prefWidth="122.0" text="\$isDone" />
             </children>
          </HBox>
     </VBox>
