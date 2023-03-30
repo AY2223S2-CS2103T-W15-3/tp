@@ -63,6 +63,8 @@ public class MainWindow extends UiPart<Stage> {
     @FXML
     private CheckMenuItem light;
 
+    @FXML CheckMenuItem dark;
+
     @FXML
     private Menu menuButton;
 
@@ -119,13 +121,27 @@ public class MainWindow extends UiPart<Stage> {
     }
 
     public void setTheme() {
+        dark.setSelected(true);
         light.selectedProperty().addListener((obs, wasSelected, isSelected) -> {
             String currentStyleSheet = primaryStage.getScene().getStylesheets().get(0);
             String newStyleSheet;
             if (isSelected) {
                 newStyleSheet = "view/LightTheme.css";
+                dark.setSelected(false);
             } else {
-                newStyleSheet = "view/DarkTheme.css";
+                newStyleSheet = currentStyleSheet;
+            }
+            primaryStage.getScene().getStylesheets().remove(currentStyleSheet);
+            primaryStage.getScene().getStylesheets().add(newStyleSheet);
+        });
+        dark.selectedProperty().addListener((obs, wasSelected, isSelected) -> {
+            String currentStyleSheet = primaryStage.getScene().getStylesheets().get(0);
+            String newStyleSheet;
+            if (isSelected) {
+                newStyleSheet = "view/" + "DarkTheme.css";
+                light.setSelected(false);
+            } else {
+                newStyleSheet = currentStyleSheet;
             }
             primaryStage.getScene().getStylesheets().remove(currentStyleSheet);
             primaryStage.getScene().getStylesheets().add(newStyleSheet);

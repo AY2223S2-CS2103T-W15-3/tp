@@ -42,9 +42,10 @@
                            <MenuItem fx:id="Review" onAction="#reviewClicked" text="Review" />
                         </items>
                      </Menu>
-                     <Menu mnemonicParsing="false" text="Theme" fx:id="menuButton">
+                     <Menu fx:id="menuButton" mnemonicParsing="false" text="Theme">
                         <items>
-                           <CheckMenuItem mnemonicParsing="false" text="Light Mode" fx:id="light" />
+                           <CheckMenuItem fx:id="dark" mnemonicParsing="false" text="Dark Mode" />
+                           <CheckMenuItem fx:id="light" mnemonicParsing="false" text="Light Mode" />
                         </items>
                      </Menu>
               </MenuBar>
