@@ -61,9 +61,10 @@ public class MainWindow extends UiPart<Stage> {
     private Label panelLabel;
 
     @FXML
-    private CheckMenuItem light;
+    private CheckMenuItem dark;
 
-    @FXML CheckMenuItem dark;
+    @FXML
+    private CheckMenuItem light;
 
     @FXML
     private Menu menuButton;
